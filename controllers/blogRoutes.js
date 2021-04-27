@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../models');
+const { Blog, Comment } = require('../models');
 
 router.get('/:id', async (req, res) => {
     try {
@@ -9,7 +9,11 @@ router.get('/:id', async (req, res) => {
             return;
         }
         const blog = blogData.get({plain: true});
-        res.render('blog', {blog, logged_in: req.session.logged_in});
+
+        const commentData = await Comment.findAll({ where: { blog_id: req.params.id } });
+        const comments = commentData.map((comment) => comment.get({plain: true}));
+
+        res.render('blog', {blog, comments, logged_in: req.session.logged_in, blog_id: req.params.id, user_id: req.session.user_id});
     } catch (err) {
         res.status(400).json(err);
     }

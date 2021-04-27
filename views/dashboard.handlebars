@@ -1,0 +1,17 @@
+{{#each blogs as |blog| }}
+<a href={{update_blog_url blog.id}}>
+    <div class="card">
+        <div class="card-header">
+            <span>{{blog.title}}</span>
+        </div>
+        <div class="card-body">
+            <p>{{blog.body}}</p>
+            <span>{{blog.date_created}}</span>
+        </div>
+    </div>
+</a>
+{{/each}}
+
+<div>
+    <a href="/dashboard/post">+Post</a>
+</div>

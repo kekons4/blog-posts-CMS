@@ -7,3 +7,29 @@
         <span>{{blog.date_created}}</span>
     </div>
 </div>
+
+{{#each comments as |comment|}}
+<div class="card">
+    <div class="card-body">
+        <p>{{comment.body}}</p>
+        <span>{{comment.date_created}}</span>
+        <span>{{comment.user_id}}</span>
+    </div>
+</div>
+{{/each}}
+
+{{#if logged_in}}
+<form class="create-comment">
+    <div class="card">
+        <div class="card-header">
+            <h3>Comment:</h3>
+        </div>
+        <div class="card-body">
+            <textarea id="body" cols="30" rows="10"></textarea>
+        </div>
+        <button id="create-comment" type="submit" data-blog={{blog_id}} data-user={{user_id}}>comment</button>
+    </div>
+</form>
+
+<script src="/js/createComment.js"></script>
+{{/if}}

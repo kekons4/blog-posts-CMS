@@ -1,0 +1,18 @@
+<form class="blog-update">
+    <div class="card">
+        <div class="card-header">
+            <h3>Update Post:</h3>
+        </div>
+        <div class="card-body">
+            <label for="blog-title">Title:</label>
+            <input type="text" id="blog-title" value={{blog.title}}/>
+
+            <label for="blog-body">Body:</label>
+            <textarea id="blog-body" cols="30" rows="10">{{blog.body}}</textarea>
+
+            <button id="update-post" type="submit" data-user={{user_id}} data-blog={{blog_id}}>Update</button>
+        </div>
+    </div>
+</form>
+
+<script src="/js/updatePost.js"></script>
