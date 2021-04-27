@@ -4,7 +4,9 @@
   "description": "HW 14 of the OSU coding bootcamp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
