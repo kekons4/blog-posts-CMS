@@ -28,4 +28,17 @@ router.put('/update', withAuth, async (req, res) => {
     }
 });
 
+router.delete('/delete', withAuth, async (req, res) => {
+    try {
+        const commentData = await Comment.destroy({where: { id: req.body.id }});
+        if(!commentData){
+            res.status(404).json({ message: "ERROR there is no comment with that id" });
+            return;
+        }
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 module.exports = router;
