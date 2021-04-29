@@ -1,10 +1,12 @@
 const router = require('express').Router();
-const { Blog } = require('../models');
+const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        const blogData = await Blog.findAll({ where: { user_id: req.session.user_id } });
+        const blogData = await Blog.findAll({ 
+            where: { user_id: req.session.user_id }
+        });
 
         if(!blogData) {
             res.status(404).json({ message: "You have no posts" });

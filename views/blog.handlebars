@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
         <h3>{{blog.title}}</h3>
-        <h5>User: {{blog.user_id}}</h5>
+        <h5>User: {{blog.user.username}}</h5>
     </div>
     <div class="card-body">
         <p>{{blog.body}}</p>
@@ -14,7 +14,7 @@
     <div class="card-body">
         <p>{{comment.body}}</p>
         <span>posted on: {{format_date comment.date_created}}</span>
-        <span>user: {{comment.user_id}}</span>
+        <span>user: {{user.username}}</span>
     </div>
 </div>
 {{/each}}

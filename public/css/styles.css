@@ -20,6 +20,7 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     /* border: 1px black solid; */
 }
 
@@ -42,7 +43,7 @@ header nav {
     /* border: 1px black solid; */
     padding: 10px;
     margin-right: 100px;
-    margin-left: 500px;
+    /* margin-left: 500px; */
 }
 
 header nav .link-item {
@@ -126,7 +127,7 @@ main {
 
 .card-body button {
     margin-top: 15px;
-    width: 15%;
+    width: 100px;
     padding: 10px;
     font-size: 15px;
 }
@@ -147,7 +148,7 @@ main {
     color: black;
     text-decoration: none;
     margin-top: 15px;
-    width: 500px;
+    width: 100%;
 }
 
 .dashboard-card a {
@@ -174,4 +175,50 @@ main {
 
 .new-post:hover {
     opacity: 0.5;
+}
+
+@media only screen and (max-width: 780px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header h1 {
+        margin-left: 0;
+    }
+
+    header nav {
+        margin-right: 0;
+    }
+    
+    .space {
+        height: 100px;
+    }
+
+    .card {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .card {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .card {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .dashboard-card {
+        /* width: 250px; */
+        flex-direction: column;
+    }
+
+    .card {
+        width: 300px;
+    }
 }
