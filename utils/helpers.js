@@ -16,6 +16,9 @@ module.exports = {
   },
   format_time: (date) => {
     return date.tolocaleTimeString();
+  },
+  format_date: (date) => {
+    return `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
   }
 };
   

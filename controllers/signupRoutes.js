@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     try {
-        res.render('signup', {logged_in: req.session.logged_in});
+        res.render('signup', {logged_in: req.session.logged_in, page_name: "Signup"});
     } catch (err) {
         res.status(500).json(err);
     }

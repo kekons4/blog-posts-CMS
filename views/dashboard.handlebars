@@ -1,17 +1,16 @@
+<div id="my-posts">
 {{#each blogs as |blog| }}
-<a href={{update_blog_url blog.id}}>
-    <div class="card">
-        <div class="card-header">
+    <div class="dashboard-card">
+        <a href={{update_blog_url blog.id}}>
             <span>{{blog.title}}</span>
-        </div>
-        <div class="card-body">
-            <p>{{blog.body}}</p>
-            <span>{{blog.date_created}}</span>
-        </div>
+        </a>
+        <span>Date created: {{format_date blog.date_created}}</span>
+        <a id="delete-post"><i data-id={{blog.id}} data-user={{blog.user_id}} class="fa fa-trash"></i></a>
     </div>
-</a>
 {{/each}}
-
-<div>
-    <a href="/dashboard/post">+Post</a>
 </div>
+
+<a class="new-post" href="/dashboard/post">+Post</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="/js/deletePost.js"></script>

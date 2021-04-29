@@ -13,7 +13,7 @@ router.get('/:id', async (req, res) => {
         const commentData = await Comment.findAll({ where: { blog_id: req.params.id } });
         const comments = commentData.map((comment) => comment.get({plain: true}));
 
-        res.render('blog', {blog, comments, logged_in: req.session.logged_in, blog_id: req.params.id, user_id: req.session.user_id});
+        res.render('blog', {blog, comments, page_name: "Post", logged_in: req.session.logged_in, blog_id: req.params.id, user_id: req.session.user_id});
     } catch (err) {
         res.status(400).json(err);
     }

@@ -5,24 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CMS Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
+  <!-- Header with navigation bar -->
   <header>
     <h1>
-      Home
+      CMS Blog: <span>{{page_name}}</span>
     </h1>
     <!-- TODO: Add a comment describing the functionality of this helper -->
     <nav>
+      <a class="link-item" href="/">Home</a>
+      <a href="/dashboard" class="link-item">Dashboard</a>
     {{#if logged_in}}
       <a class="link-item" id="logout">logout</a>
     {{else}}
-      <a class="link-item">login</a>
+      <a href="/login" class="link-item">login</a>
     {{/if}}
     </nav>
   </header>
 
+<!-- creates space between header and main tag -->
+  <div class="space"></div>
+
+<!-- Main html -->
   <main>
     {{{ body }}}
   </main>
@@ -30,7 +38,6 @@
       
   </footer>
 
-  <!-- TODO: Add a comment describing the functionality of this helper -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

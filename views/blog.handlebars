@@ -1,10 +1,11 @@
 <div class="card">
     <div class="card-header">
-        <span>{{blog.title}}</span>
+        <h3>{{blog.title}}</h3>
+        <h5>User: {{blog.user_id}}</h5>
     </div>
     <div class="card-body">
         <p>{{blog.body}}</p>
-        <span>{{blog.date_created}}</span>
+        <span>{{format_date blog.date_created}}</span>
     </div>
 </div>
 
@@ -12,8 +13,8 @@
 <div class="card">
     <div class="card-body">
         <p>{{comment.body}}</p>
-        <span>{{comment.date_created}}</span>
-        <span>{{comment.user_id}}</span>
+        <span>posted on: {{format_date comment.date_created}}</span>
+        <span>user: {{comment.user_id}}</span>
     </div>
 </div>
 {{/each}}
@@ -22,12 +23,12 @@
 <form class="create-comment">
     <div class="card">
         <div class="card-header">
-            <h3>Comment:</h3>
+            <h4>Comment:</h4>
         </div>
         <div class="card-body">
-            <textarea id="body" cols="30" rows="10"></textarea>
+            <textarea placeholder="Comment here..." id="body" cols="30" rows="10"></textarea>
+            <button id="create-comment" type="submit" data-blog={{blog_id}} data-user={{user_id}}>Comment</button>
         </div>
-        <button id="create-comment" type="submit" data-blog={{blog_id}} data-user={{user_id}}>comment</button>
     </div>
 </form>
 
