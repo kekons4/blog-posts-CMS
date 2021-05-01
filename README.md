@@ -5,6 +5,8 @@ HW 14 of the OSU coding bootcamp
 This project is a MVC CMS blog site. Users can login and signup to create blog posts for everyone to view.
 The user has the ability to comment on other peoples blog posts creating a community to share new ideas.
 
+Link to live deployed site: https://still-stream-50295.herokuapp.com/blogs/1
+
 ## Screenshots
 
 ![Screenshot_One](/assets/screenshot_one.png)
