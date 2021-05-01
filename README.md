@@ -21,3 +21,35 @@ The user has the ability to comment on other peoples blog posts creating a commu
 
 ![Screenshot_Five](/assets/screenshot_five.png)
 ##### screenshot of single blog post page with comments
+
+## Installation
+
+You can install this project via https://github.com/kekons4/blog-posts-CMS.git
+Technology used: node.js
+libraries used: mysql2, sequelize, express.js, express-handlebars
+
+## Usage
+
+to execute project, run 'npm start'
+
+## license
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+## Contributing
+
+Keon Pourboghrat : https://github.com/kekons4
+
+## Testing
+
+Tested all use cases and edge cases and runs as expected
+
+## Questions
+
+If you have any questions about the projects please contact me at anyone of the ways below.
+
+    Github Username: kekons4
+
+    Github profile link: https://github.com/kekons4
+
+    Email: kekons4@gmail.com
